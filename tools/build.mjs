@@ -3,7 +3,7 @@
 // 使い方（portfolio フォルダで）: node tools/build.mjs
 //
 // ページの本文は assets/js/main.js が表示します。ここで <main> に書き込むのは、
-// JavaScript を実行しない検索エンジンやリンクプレビュー向けの英語の要約で、
+// JavaScript を実行しない検索エンジンやリンクプレビュー向けの日本語の要約で、
 // ブラウザでは main.js がすぐに同じ内容の表示に置き換えます（画面に二重には出ません）。
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, copyFileSync, rmSync } from "node:fs";
 import vm from "node:vm";
@@ -52,8 +52,9 @@ writeFileSync(
 const ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
 const esc = (v) => String(v == null ? "" : v).replace(/[&<>"']/g, (c) => ESC[c]);
 const en = (v) => (v && typeof v === "object" && !Array.isArray(v) ? v.en : v);
-const list = (v) => (Array.isArray(en(v)) ? en(v) : []);
-const ui = (k) => I18N.en[k] || k;
+const ja = (v) => (v && typeof v === "object" && !Array.isArray(v) ? v.ja ?? v.en : v);
+const list = (v) => (Array.isArray(ja(v)) ? ja(v) : []);
+const ui = (k) => I18N.ja[k] || I18N.en[k] || k;
 const workTitle = (w) => (typeof w.title === "string" ? w.title : w.title.en);
 const workUrl = (w) => `work.html?id=${encodeURIComponent(w.id)}`;
 
@@ -66,7 +67,7 @@ const person = {
   name: SEO.personName,
   alternateName: SEO.alternateNames,
   url: base,
-  description: list(PROFILE.biography).join(" "),
+  description: en(PROFILE.biography).join(" "),
   knowsAbout: SEO.knowsAbout,
 };
 const website = {
@@ -92,30 +93,30 @@ const jsonLd = (graph) =>
     .map((l) => "  " + l)
     .join("\n")}\n  </script>\n`;
 
-/* ---------- static fallback content (English) ---------- */
+/* ---------- static fallback content (Japanese) ---------- */
 
 const nameHtml = `${esc(SITE.name)} <span lang="ja">${esc(SITE.nameJa)}</span>`;
 const nav = `<nav class="static-nav" aria-label="${esc(ui("mainNav"))}">
       <a href="index.html">${nameHtml}</a>
-      ${SITE.nav.map((n) => `<a href="${esc(n.href)}">${esc(en(n.label))}</a>`).join("\n      ")}
+      ${SITE.nav.map((n) => `<a href="${esc(n.href)}">${esc(ja(n.label))}</a>`).join("\n      ")}
     </nav>`;
 
 const recordsHtml = (items) =>
   `<ul>
 ${list(items)
-  .map((r) => `      <li>${[en(r.date) || r.year, en(r.title), en(r.detail), en(r.status), en(r.note)].filter(Boolean).map(esc).join(" — ")}</li>`)
+  .map((r) => `      <li>${[ja(r.date) || r.year, ja(r.title), ...[ja(r.detail)].flat(), ja(r.status), ja(r.note)].filter(Boolean).map(esc).join(" — ")}</li>`)
   .join("\n")}
     </ul>`;
 
 const birth = /^(\d{4})-(\d{2})-(\d{2})$/.exec(PROFILE.birthDate || "");
 const birthText = birth
-  ? new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(
+  ? new Intl.DateTimeFormat("ja-JP", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(
       new Date(Date.UTC(+birth[1], +birth[2] - 1, +birth[3]))
     )
   : "";
 
 const snapshots = {
-  works: `<h1>${esc(SITE.nameJa)} / ${esc(SITE.name)} — ${esc(en(SITE.field))}</h1>
+  works: `<h1>${esc(SITE.nameJa)} / ${esc(SITE.name)} — ${esc(ja(SITE.field))}</h1>
     <h2>${esc(ui("projects"))}</h2>
     <ul>
 ${WORKS.map((w) => `      <li><a href="${workUrl(w)}">${esc(workTitle(w))}</a> ${esc(w.year)}</li>`).join("\n")}
@@ -129,12 +130,14 @@ ${list(PROFILE.biography).map((p) => `    <p>${esc(p)}</p>`).join("\n")}
     <h2>${esc(ui("education"))}</h2>
     ${recordsHtml(PROFILE.education)}
     <h2>${esc(ui("awardsSelections"))}</h2>
-    ${recordsHtml(PROFILE.awards)}`,
+    ${recordsHtml(PROFILE.awards)}${PROFILE.exhibitions.length ? `
+    <h2>${esc(ui("exhibitions"))}</h2>
+    ${recordsHtml(PROFILE.exhibitions)}` : ""}`,
   contact: `<h1>${esc(ui("contact"))}</h1>
-${list([en(SITE.contact.intro)]).map((p) => `    <p>${esc(p)}</p>`).join("\n")}
+${list([ja(SITE.contact.intro)]).map((p) => `    <p>${esc(p)}</p>`).join("\n")}
 ${SITE.contact.items
-  .map((i) => `    <p>${esc(en(i.label))}: ${i.href ? `<a href="${esc(i.href)}">${esc(en(i.value))}</a>` : esc(en(i.value))}</p>`)
-  .join("\n")}${SITE.contact.note ? `\n    <p>${esc(en(SITE.contact.note))}</p>` : ""}`,
+  .map((i) => `    <p>${esc(ja(i.label))}: ${i.href ? `<a href="${esc(i.href)}">${esc(ja(i.value))}</a>` : esc(ja(i.value))}</p>`)
+  .join("\n")}${SITE.contact.note ? `\n    <p>${esc(ja(SITE.contact.note))}</p>` : ""}`,
   work: `<h1>${esc(ui("projects"))}</h1>
     <ul>
 ${WORKS.map((w) => `      <li><a href="${workUrl(w)}">${esc(workTitle(w))}</a></li>`).join("\n")}
@@ -173,7 +176,7 @@ for (const p of pages) {
     ${nav}
     ${snapshots[p.page]}`;
   const html = `<!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -190,7 +193,7 @@ ${p.noindex ? `  <base href="/">\n  <meta name="robots" content="noindex">\n` : 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>try{if(localStorage.getItem("lang")==="ja")document.documentElement.lang="ja"}catch(e){}</script>
+  <script>try{if(localStorage.getItem("lang")==="en")document.documentElement.lang="en"}catch(e){}</script>
   <script defer src="data/site.js"></script>
   <script defer src="data/i18n.js"></script>
 ${(p.data || []).map((d) => `  <script defer src="data/${d}.js"></script>\n`).join("")}  <script defer src="assets/js/main.js"></script>

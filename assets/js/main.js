@@ -19,12 +19,12 @@
     { id: "ja", label: "JP", name: "日本語" },
   ];
   const STORAGE_KEY = "lang";
-  let lang = "en";
+  let lang = "ja";
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (LANGS.some((l) => l.id === saved)) lang = saved;
   } catch (e) {
-    /* storage unavailable: stay in English */
+    /* storage unavailable: stay in Japanese */
   }
 
   // { en, ja } の値を現在の言語で取り出す（ただの文字列ならそのまま）
@@ -298,6 +298,7 @@
         ${block(ui("overview"), prose(w.overview))}
         ${block(ui("credits"), specs(w.credits))}
         ${block(ui("awardsSelections"), records(workAwards(w)))}
+        ${block(ui("exhibitions"), records(workExhibitions(w)))}
         ${w.links ? block(ui("links"), workLinks(w.links)) : ""}
         ${gallery}
       </article>
@@ -320,6 +321,13 @@
         const related = ref.relatedWork ? ui("relatedWork").replace("{title}", ref.relatedWork) : null;
         return { ...a, detail: related ? [related] : a.detail };
       })
+      .filter(Boolean);
+  }
+
+  // 展示歴は profile.js の exhibitions から id で引く（ABOUT と共通）
+  function workExhibitions(w) {
+    return list(w.exhibitions)
+      .map((ref) => list(PROFILE.exhibitions).find((x) => x.id === ref.id))
       .filter(Boolean);
   }
 
