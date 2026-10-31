@@ -34,7 +34,7 @@
  *                 [{ id: "japan-leather-award-2026" }]
  *                 関連作品の実績のときは { id: "...", relatedWork: "作品名" }
  *   exhibitions 展示歴。profile.js の exhibitions の id を参照（任意。未設定・空なら非表示）
- *                 [{ id: "ykk-fastening-creation-2027-tokyo" }]
+ *                 [{ id: "ykk-fastening-creation-2027" }]
  *   links       リンク（この項目を書いた作品だけ LINKS を表示）
  *                 data      3Dデータ [{ title, url, file, description, license }]
  *                             url = 外部の公開ページ / file = このサイト内のファイル（例 "files/leather-cell-vest/vest.stl"）
@@ -115,8 +115,7 @@ window.WORKS = [
     ],
     awards: [{ id: "ykk-fastening-awards-26" }],
     exhibitions: [
-      { id: "ykk-fastening-creation-2027-tokyo" },
-      { id: "ykk-fastening-creation-2027-osaka" },
+      { id: "ykk-fastening-creation-2027" },
     ],
     // links: { data: [], articles: [] },  // 追加すると LINKS が表示されます
   },

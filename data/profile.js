@@ -63,18 +63,20 @@ window.PROFILE = {
       year: "2026",
       title: { en: "Nippori Fashion Design Contest 2026", ja: "日暮里ファッションデザインコンテスト2026" },
       status: { en: "Selected (Final results pending)", ja: "入選（最終結果発表待ち）" },
+      url: "https://www.city.arakawa.tokyo.jp/a020/sangyou/nipporicollection/2026ichijishinsakekka.html",
     },
     {
       id: "nfdt-2027",
       year: "2026",
       title: "Next Fashion Designer of Tokyo 2027",
       status: { en: "Passed the First Screening (Work in progress)", ja: "一次審査通過（作品制作中）" },
+      url: "https://nfdt.metro.tokyo.lg.jp/primary-selection2027_free/",
     },
     {
       id: "ykk-fastening-awards-26",
       year: "2026",
       title: { en: "The 26th YKK FASTENING AWARDS", ja: "第26回 YKKファスニングアワード" },
-      status: { en: "Selected", ja: "入選" },
+      status: { en: "Selected (Fashion Goods Category)", ja: "ファッショングッズ部門 入選" },
       url: "https://www.ykk.com/fa/award/result/",
     },
     {
@@ -82,43 +84,26 @@ window.PROFILE = {
       year: "2026",
       title: { en: "Japan Leather Award 2026", ja: "ジャパンレザーアワード2026" },
       status: { en: "Selected Work (Final awards pending)", ja: "入賞（最終結果発表待ち）" },
+      url: "https://award.jlia.or.jp/2026/list/detail.php?no=J26A-0494",
     },
   ],
 
   // 展示歴（任意）
   exhibitions: [
     {
-      id: "ykk-fastening-creation-2027-tokyo",
+      id: "ykk-fastening-creation-2027",
       year: "2026",
       title: { en: "YKK FASTENING CREATION for 2027", ja: "YKK FASTENING CREATION for 2027" },
       detail: {
         en: [
-          "The 26th YKK FASTENING AWARDS — Selected Works Fashion Show (Tokyo)",
-          "Dates: October 29–30, 2026",
-          "Venue: YKK60 Building, AZ1, Tokyo",
+          "The 26th YKK FASTENING AWARDS — Selected Works Fashion Show",
+          "Tokyo: YKK60 Building, 1F AZ1 (October 29–30, 2026)",
+          "Osaka: MyDome Osaka, 3F, Halls E & F (October 7–8, 2026)",
         ],
         ja: [
-          "第26回YKKファスニングアワード 入選作品ファッションショー（東京会場）",
-          "会期：2026年10月29日〜30日",
-          "会場：YKK60ビル 1階 AZ1（東京）",
-        ],
-      },
-      url: "https://www.ykk.com/fa/award/announcement.html",
-    },
-    {
-      id: "ykk-fastening-creation-2027-osaka",
-      year: "2026",
-      title: { en: "YKK FASTENING CREATION for 2027", ja: "YKK FASTENING CREATION for 2027" },
-      detail: {
-        en: [
-          "The 26th YKK FASTENING AWARDS — Selected Works Fashion Show (Osaka)",
-          "Dates: October 7–8, 2026",
-          "Venue: MyDome Osaka, 3F, Halls E & F, Osaka",
-        ],
-        ja: [
-          "第26回YKKファスニングアワード 入選作品ファッションショー（大阪会場）",
-          "会期：2026年10月7日〜8日",
-          "会場：マイドームおおさか 3階 E・Fホール（大阪）",
+          "第26回YKKファスニングアワード 入選作品ファッションショー",
+          "東京：YKK60ビル 1階 AZ1（2026年10月29日〜30日）",
+          "大阪：マイドームおおさか 3階 E・Fホール（2026年10月7日〜8日）",
         ],
       },
       url: "https://www.ykk.com/fa/award/announcement.html",
