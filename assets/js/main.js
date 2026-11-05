@@ -19,13 +19,9 @@
     { id: "ja", label: "JP", name: "日本語" },
   ];
   const STORAGE_KEY = "lang";
-  let lang = "ja";
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (LANGS.some((l) => l.id === saved)) lang = saved;
-  } catch (e) {
-    /* storage unavailable: stay in Japanese */
-  }
+  // Reuse the language resolved in <head> before the first paint.
+  // Fresh visits always start in Japanese; only an explicit saved choice uses English.
+  let lang = document.documentElement.lang === "en" ? "en" : "ja";
 
   // { en, ja } の値を現在の言語で取り出す（ただの文字列ならそのまま）
   const tr = (v) =>

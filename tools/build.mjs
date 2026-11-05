@@ -193,7 +193,7 @@ ${p.noindex ? `  <base href="/">\n  <meta name="robots" content="noindex">\n` : 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>try{if(localStorage.getItem("lang")==="en")document.documentElement.lang="en"}catch(e){}</script>
+  <script>document.documentElement.lang="ja";try{if(localStorage.getItem("lang")==="en")document.documentElement.lang="en"}catch(e){}</script>
   <script defer src="data/site.js"></script>
   <script defer src="data/i18n.js"></script>
 ${(p.data || []).map((d) => `  <script defer src="data/${d}.js"></script>\n`).join("")}  <script defer src="assets/js/main.js"></script>
