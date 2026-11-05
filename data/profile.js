@@ -21,7 +21,7 @@ window.PROFILE = {
       "Riki Imamura is a student at Bunka Fashion College and the Open University of Japan. His work explores sustainable fashion through technology, focusing on the design of 3D-printed garments and products, as well as new approaches to clothing production. His projects have received recognition in multiple fashion design competitions in Japan.",
     ],
     ja: [
-      "今村吏希は、文化服装学院と放送大学に在学する学生。テクノロジーを活用したサステナブルなファッションに関心を持ち、現在は3Dプリント技術による衣服やプロダクトのデザインと、新しい製造方法の探究に取り組んでいる。これまでに国内の複数のファッションコンテストで入賞・入選している。",
+      "今村吏希は、文化服装学院と放送大学に在学する学生。テクノロジーを活用したサステナブルなファッションに関心を持ち、現在は3Dプリント技術による衣服やプロダクトのデザインと、新しい製造方法の探究に取り組んでいる。これまでに国内の複数のファッションコンテストで受賞・入選している。",
     ],
   },
 
@@ -40,7 +40,7 @@ window.PROFILE = {
       date: { en: "April 2025 — Enrolled", ja: "2025年4月 — 入学" },
       title: { en: "Bunka Fashion College", ja: "文化服装学院" },
       detail: { en: "Fashion Creation Department, Garment Creation", ja: "服飾専門課程 服装科" },
-      note: { en: "Currently enrolled in the second year", ja: "服装科2年在学中" },
+      note: { en: "Currently enrolled in the second year", ja: "2年次在学" },
     },
     {
       date: { en: "April 2026 — Transferred into the third year", ja: "2026年4月 — 3年次編入学" },
