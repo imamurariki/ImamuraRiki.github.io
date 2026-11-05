@@ -108,8 +108,8 @@ window.WORKS = [
       {
         label: { en: "Intellectual Property Rights", ja: "知的財産権" },
         value: {
-          en: "Assigned to YKK Corporation or its designated company under the award rules.",
-          ja: "募集要項に基づきYKK株式会社またはその指定会社に譲渡。",
+          en: "Assigned to YKK Corporation or its designated company under the entry rules of the 26th YKK FASTENING AWARDS (2026).",
+          ja: "第26回YKKファスニングアワード（2026年度）の募集要項に基づき、YKK株式会社またはその指定会社に譲渡。",
         },
       },
     ],
@@ -146,8 +146,8 @@ window.WORKS = [
       ],
     },
     credits: [
-      { label: { en: "Design & Research", ja: "デザイン・リサーチ" }, value: "Riki Imamura" },
-      { label: { en: "Software Development", ja: "ソフトウェア開発" }, value: "Riki Imamura" },
+      { label: { en: "Design", ja: "デザイン" }, value: "Riki Imamura" },
+      { label: { en: "Software", ja: "ソフトウェア" }, value: "Riki Imamura" },
     ],
     // 関連作品（ZERO CUT PATTERN / EXTENDED SKIN）での実績。テキスタイル研究そのものの受賞ではない
     awards: [
