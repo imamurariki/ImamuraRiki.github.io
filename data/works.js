@@ -36,7 +36,7 @@
  *   exhibitions 展示歴。profile.js の exhibitions の id を参照（任意。未設定・空なら非表示）
  *                 [{ id: "ykk-fastening-creation-2027" }]
  *   links       リンク（この項目を書いた作品だけ LINKS を表示）
- *                 data      3Dデータ [{ title, url, file, description, license }]
+ *                 data      3Dデータ [{ title, url, file, description, license, licenseUrl }]
  *                             url = 外部の公開ページ / file = このサイト内のファイル（例 "files/leather-cell-vest/vest.stl"）
  *                             空 [] のときは「公開準備中 / Coming soon」と表示
  *                 articles  掲載歴（掲載記事・外部リンク） [{ title, source, url }]
@@ -70,7 +70,17 @@ window.WORKS = [
     credits: [{ label: { en: "Design", ja: "デザイン" }, value: "Riki Imamura" }],
     awards: [{ id: "japan-leather-award-2026" }],
     links: {
-      data: [],
+      data: [
+        {
+          title: { en: "STL & Printing Guide (ZIP)", ja: "STL・プリントガイド（ZIP）" },
+          url: "https://github.com/imamurariki/leather-cell-vest/releases/download/v1.0.0/leather-cell-vest.zip",
+          license: {
+            en: "3D model (STL): CC BY-NC 4.0. Non-commercial use, modification and redistribution are permitted with attribution, a license link and an indication of changes.",
+            ja: "3Dモデル（STL）：CC BY-NC 4.0。作者表記・ライセンスへのリンク・改変の明示を条件に、非営利での利用・改変・再配布が可能です。",
+          },
+          licenseUrl: "https://github.com/imamurariki/leather-cell-vest/blob/main/LICENSE.md",
+        },
+      ],
       articles: [
         {
           title: { en: "Japan Leather Award 2026 — Project Page", ja: "ジャパンレザーアワード2026 作品掲載ページ" },

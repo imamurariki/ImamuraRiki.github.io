@@ -48,6 +48,12 @@ window.SITE = {
     { id: "contact", label: { en: "CONTACT", ja: "お問い合わせ" }, href: "contact.html" },
   ],
 
+  // 名前の横に表示するSNSリンク
+  social: [
+    { label: "Instagram", href: "https://www.instagram.com/imamurariki/", icon: "assets/img/instagram.svg" },
+    { label: "GitHub", href: "https://github.com/imamurariki", icon: "assets/img/github.svg" },
+  ],
+
   contact: {
     intro: {
       en: "For inquiries, please contact me at the email address below.",
