@@ -179,6 +179,31 @@ img.fade.is-loaded {
   font-size: var(--fs-s);
 }
 
+.site-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-social {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.site-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.site-social img {
+  width: 16px;
+  height: 16px;
+}
+
 .site-title {
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -233,21 +258,20 @@ img.fade.is-loaded {
   transition: color 0.3s;
 }
 
-/* スマートフォン：1行目に名前と EN / JP、2行目にナビ。横にはみ出さない */
-@media (max-width: 599px) {
+/* 狭い画面：名前・SNS・言語切替を1行目、ナビを2行目に配置 */
+@media (max-width: 899px) {
   .site-header {
-    position: static;
     grid-template-columns: 1fr auto;
     grid-template-areas:
-      "title lang"
+      "identity lang"
       "nav nav";
+    column-gap: 12px;
     row-gap: 10px;
-    padding-top: 18px;
-    padding-bottom: 0;
   }
 
-  .site-title {
-    grid-area: title;
+  .site-identity {
+    grid-area: identity;
+    gap: 8px;
   }
 
   .lang-switch {
@@ -259,11 +283,26 @@ img.fade.is-loaded {
   }
 
   .site-nav ul {
-    gap: 20px;
+    flex-wrap: wrap;
+    column-gap: 20px;
+  }
+}
+
+@media (max-width: 599px) {
+  .site-header {
+    position: static;
+    padding-top: 18px;
+    padding-bottom: 0;
   }
 }
 
 @media (max-width: 359px) {
+  .site-header {
+    grid-template-areas:
+      "identity identity"
+      "nav lang";
+  }
+
   .site-nav ul {
     gap: 14px;
   }

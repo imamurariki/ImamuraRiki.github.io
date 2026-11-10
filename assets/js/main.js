@@ -203,8 +203,15 @@
         `<button type="button" data-lang="${l.id}" lang="${l.id}" aria-label="${esc(l.name)}" aria-pressed="${l.id === lang}">${l.label}</button>`
     ).join('<span aria-hidden="true">/</span>');
 
+    const social = list(SITE.social)
+      .map((s) => `<a href="${esc(s.href)}"${linkAttrs(s.href)} aria-label="${esc(s.label)} (${esc(ui("newTab"))})"><img src="${esc(s.icon)}" width="16" height="16" alt=""></a>`)
+      .join("");
+
     header.innerHTML = `
-      <a class="site-title" href="index.html">${personName(SITE.name, SITE.nameJa, "site-title")}</a>
+      <div class="site-identity">
+        <a class="site-title" href="index.html">${personName(SITE.name, SITE.nameJa, "site-title")}</a>
+        <div class="site-social">${social}</div>
+      </div>
       <nav class="site-nav" aria-label="${esc(ui("mainNav"))}"><ul>${nav}</ul></nav>
       <div class="lang-switch" role="group" aria-label="${esc(ui("language"))}">${switcher}</div>`;
 
@@ -333,9 +340,10 @@
       const t = esc(tr(title) || href);
       return href ? `<a class="text-link" href="${esc(href)}"${isExternal(href) ? linkAttrs(href) : " download"}>${t}</a>` : t;
     };
-    const item = (title, lines, pending) => `<li>
+    const item = (title, lines, pending, details = "") => `<li>
         <span class="links__title">${title}</span>
         ${lines.filter(Boolean).map((d) => `<span class="links__detail">${esc(d)}</span>`).join("")}
+        ${details ? `<span class="links__detail">${details}</span>` : ""}
         ${pending ? `<span class="links__detail">${esc(pending)}</span>` : ""}
       </li>`;
     const group = (label, items, empty) => `<div class="records-group">
@@ -346,7 +354,7 @@
     const data = list(links.data).map((d) => {
       const href = d.url || d.file;
       const license = tr(d.license) ? `${ui("license")}: ${tr(d.license)}` : "";
-      return item(linkTitle(d.title, href), [tr(d.description), license], href ? "" : ui("comingSoon"));
+      return item(linkTitle(d.title, href), [tr(d.description), license], href ? "" : ui("comingSoon"), d.licenseUrl ? linkTitle(ui("licenseDetails"), d.licenseUrl) : "");
     });
     const articles = list(links.articles).map((r) =>
       item(linkTitle(r.title, r.url), [tr(r.source)], r.url ? "" : ui("toBeAdded"))
