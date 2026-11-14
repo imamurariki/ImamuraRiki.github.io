@@ -62,14 +62,14 @@ window.PROFILE = {
       id: "nippori-2026",
       year: "2026",
       title: { en: "Nippori Fashion Design Contest 2026", ja: "日暮里ファッションデザインコンテスト2026" },
-      status: { en: "Selected (Final results pending)", ja: "入選（最終結果発表待ち）" },
+      status: { en: "Selected (Finalist)", ja: "入選（ファイナリスト）" },
       url: "https://www.city.arakawa.tokyo.jp/a020/sangyou/nipporicollection/2026ichijishinsakekka.html",
     },
     {
       id: "nfdt-2027",
       year: "2026",
       title: "Next Fashion Designer of Tokyo 2027",
-      status: { en: "Passed the First Screening (Work in progress)", ja: "一次審査通過（作品制作中）" },
+      status: { en: "Passed the First Screening (Awaiting Second Screening Results)", ja: "一次審査通過（二次審査結果待ち）" },
       url: "https://nfdt.metro.tokyo.lg.jp/primary-selection2027_free/",
     },
     {
@@ -90,6 +90,28 @@ window.PROFILE = {
 
   // 展示歴（任意）
   exhibitions: [
+    {
+      id: "nippori-fashion-design-contest-2026-exhibition",
+      year: "2026",
+      title: { en: "Nippori Fashion Design Contest 2026 — Public Exhibition", ja: "日暮里ファッションデザインコンテスト2026公開展示会" },
+      detail: {
+        en: [
+          "Exhibition of 40 awarded and selected works",
+          "Related work: ZERO CUT PATTERN",
+          "Tokyo: Flat Nippori (November 13–18, 2026)",
+          "Hours: 10:00–18:00 (last admission 17:45)",
+          "Address: 6-17-6 Higashi-Nippori, Arakawa-ku, Tokyo",
+        ],
+        ja: [
+          "受賞・入選作品40点の公開展示",
+          "関連作品：ZERO CUT PATTERN",
+          "東京：ふらっとにっぽり（2026年11月13日〜18日）",
+          "開催時間：10:00〜18:00（最終入場17:45）",
+          "所在地：東京都荒川区東日暮里6-17-6（荒川区立日暮里地域活性化施設）",
+        ],
+      },
+      url: "https://www.city.arakawa.tokyo.jp/a020/sangyou/nipporicollection/2026koukai.html",
+    },
     {
       id: "ykk-fastening-creation-2027",
       year: "2026",
