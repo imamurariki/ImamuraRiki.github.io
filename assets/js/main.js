@@ -298,7 +298,7 @@
             ? `<figure class="work-hero"><button type="button" class="zoom" data-zoom aria-label="${esc(ui("enlarge"))}: ${esc(title)}">${img(hero, { eager: true, alt: title })}</button></figure>`
             : ""
         }
-        ${block(ui("overview"), prose(w.overview))}
+        ${block(ui("overview"), workOverview(w))}
         ${block(ui("credits"), specs(w.credits))}
         ${block(ui("awardsSelections"), records(workAwards(w)))}
         ${block(ui("exhibitions"), records(workExhibitions(w)))}
@@ -313,6 +313,16 @@
             </nav>`
           : ""
       }`;
+  }
+
+  // 実績 → PDFリンク → 既存の概要。文章はエスケープし、リンクは専用フィールドから生成する。
+  function workOverview(w) {
+    if (!w.overviewLead && !w.portfolio) return prose(w.overview);
+    const paragraphs = (value) => list(value).map((p) => `<p>${esc(tr(p))}</p>`).join("");
+    const portfolio = w.portfolio && w.portfolio.file
+      ? `<p><a class="text-link" href="${esc(w.portfolio.file)}" target="_blank" rel="noopener noreferrer">${esc(tr(w.portfolio.title))}</a></p>`
+      : "";
+    return `<div class="prose">${paragraphs(w.overviewLead)}${portfolio}${paragraphs(w.overview)}</div>`;
   }
 
   // 受賞・選考歴は profile.js の awards から id で引く（ABOUT と同じ表記・状況になる）

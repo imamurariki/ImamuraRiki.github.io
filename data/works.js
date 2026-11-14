@@ -28,6 +28,8 @@
  *   photoDir    写真の元フォルダ。01 がメイン画像と一覧のサムネイル、02 以降がページ下部の作品画像
  *               （ファイル名の順。jpg / png / webp）。元フォルダのファイルは変更されません
  *   coverPosition 一覧の正方形サムネイルで切り抜く位置（CSS の object-position。例 "50% 30%" で上寄り）。省略時 "50% 50%"
+ *   overviewLead 概要の冒頭に置く実績など（任意、日英対応）
+ *   portfolio   概要の冒頭と本文の間に表示するPDFリンク { title, file }（任意）
  *   overview    概要
  *   credits     クレジット [{ label: 役割, value: 名前 }]（複数可。人名は英語表記の文字列）
  *   awards      受賞・選考歴。profile.js の awards の id を参照します（ABOUT と同じ表記・状況で表示）
@@ -55,6 +57,10 @@ window.WORKS = [
       ja: "今村吏希による LEATHER CELL VEST。3Dプリントパーツと0.3mm厚のシープレザーによるユニット「LEATHER CELL」を組み合わせたモジュール式のベスト。",
     },
     photoDir: "photo/L",
+    overviewLead: {
+      en: "Grand Prix-winning work of the Japan Leather Award 2026.",
+      ja: "ジャパンレザーアワード2026グランプリ作品。",
+    },
     overview: {
       en: [
         "Conventional leather garments are made by cutting materials according to patterns and assembling them through sewing, making localized repairs and significant changes to the silhouette difficult.",
@@ -72,7 +78,7 @@ window.WORKS = [
     links: {
       data: [
         {
-          title: { en: "STL & Printing Guide (ZIP)", ja: "STL・プリントガイド（ZIP）" },
+          title: { en: "3D Model & Printing Guide (ZIP)", ja: "3Dモデル・プリントガイド(ZIP)" },
           url: "https://github.com/imamurariki/leather-cell-vest/releases/download/v1.0.0/leather-cell-vest.zip",
           license: {
             en: "3D model (STL): CC BY-NC 4.0. Non-commercial use, modification and redistribution are permitted with attribution, a license link and an indication of changes.",
@@ -101,6 +107,14 @@ window.WORKS = [
       ja: "今村吏希による CURVE CELL BAG。3DプリントパーツとYKKのスナップボタン「PLANCER®」によるユニット「CURVE CELL」を、接着剤を使わずに組み合わせたモジュール式のバッグ。",
     },
     photoDir: "photo/C",
+    overviewLead: {
+      en: "Selected work in the Fashion Goods Category of the 26th YKK FASTENING AWARDS.",
+      ja: "第26回YKKファスニングアワードファッショングッズ部門入選作品。",
+    },
+    portfolio: {
+      title: { en: "View full portfolio (PDF)", ja: "ポートフォリオはこちら（PDF）" },
+      file: "files/ykk_portfolio.pdf",
+    },
     overview: {
       en: [
         "CURVE CELL BAG is a modular bag constructed from individual “CURVE CELL” units made with 3D-printed components and YKK’s PLANCER® snap fasteners.",
@@ -127,7 +141,29 @@ window.WORKS = [
     exhibitions: [
       { id: "ykk-fastening-creation-2027" },
     ],
-    // links: { data: [], articles: [] },  // 追加すると LINKS が表示されます
+    links: {
+      data: [
+        {
+          title: { en: "3D Model & Printing Guide (ZIP)", ja: "3Dモデル・プリントガイド(ZIP)" },
+          url: "https://github.com/imamurariki/curve-cell-bag/releases/download/v1.0.0/curve-cell-bag.zip",
+          description: {
+            en: "3D-printable cell components and a printing guide; not a complete, assembled bag model.",
+            ja: "3Dプリント用のセル部品とプリントガイドを収録しています。完成したバッグ全体の3Dモデルではありません。",
+          },
+          license: {
+            en: "3D model (STL): CC BY-NC 4.0. Non-commercial use, modification and redistribution are permitted with attribution, a license link and an indication of changes.",
+            ja: "3Dモデル（STL）：CC BY-NC 4.0。作者表記・ライセンスへのリンク・改変の明示を条件に、非営利での利用・改変・再配布が可能です。",
+          },
+          licenseUrl: "https://github.com/imamurariki/curve-cell-bag/blob/main/LICENSE.md",
+        },
+      ],
+      articles: [
+        {
+          title: { en: "26th YKK FASTENING AWARDS — Results", ja: "第26回YKKファスニングアワード 審査結果" },
+          url: "https://www.ykk.com/fa/award/result/",
+        },
+      ],
+    },
   },
 
   {
@@ -163,6 +199,9 @@ window.WORKS = [
     awards: [
       { id: "nippori-2026", relatedWork: "ZERO CUT PATTERN" },
       { id: "nfdt-2027", relatedWork: "EXTENDED SKIN" },
+    ],
+    exhibitions: [
+      { id: "nippori-fashion-design-contest-2026-exhibition" },
     ],
     // links: { data: [], articles: [] },  // 追加すると LINKS が表示されます
   },
