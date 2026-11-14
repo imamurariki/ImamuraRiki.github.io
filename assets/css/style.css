@@ -791,7 +791,11 @@ figcaption {
 
 @media (max-width: 599px) {
   [data-page="about"] .profile > div:not(.profile__name) dd,
-  [data-page="about"] .about-bio {
+  [data-page="about"] .about-bio,
+  [data-page="about"] .records__title,
+  [data-page="about"] .records__detail,
+  [data-page="about"] .records__year,
+  [data-page="about"] .records__date {
     font-size: 14px;
   }
 
@@ -841,6 +845,13 @@ a.contact-list__value:hover {
   margin-top: 20px;
   color: var(--muted);
   font-size: var(--fs-s);
+}
+
+@media (max-width: 599px) {
+  [data-page="contact"] .prose,
+  [data-page="contact"] .contact-list__value {
+    font-size: 14px;
+  }
 }
 
 /* ---------- lightbox ---------- */
