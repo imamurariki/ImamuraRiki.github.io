@@ -96,18 +96,14 @@ window.PROFILE = {
       title: { en: "Nippori Fashion Design Contest 2026 — Public Exhibition", ja: "日暮里ファッションデザインコンテスト2026公開展示会" },
       detail: {
         en: [
-          "Exhibition of 40 awarded and selected works",
+          "Nippori Fashion Design Contest 2026 — Exhibition of 40 selected works",
           "Related work: ZERO CUT PATTERN",
           "Tokyo: Flat Nippori (November 13–18, 2026)",
-          "Hours: 10:00–18:00 (last admission 17:45)",
-          "Address: 6-17-6 Higashi-Nippori, Arakawa-ku, Tokyo",
         ],
         ja: [
-          "受賞・入選作品40点の公開展示",
+          "日暮里ファッションデザインコンテスト2026 入選作品展示（40作品）",
           "関連作品：ZERO CUT PATTERN",
           "東京：ふらっとにっぽり（2026年11月13日〜18日）",
-          "開催時間：10:00〜18:00（最終入場17:45）",
-          "所在地：東京都荒川区東日暮里6-17-6（荒川区立日暮里地域活性化施設）",
         ],
       },
       url: "https://www.city.arakawa.tokyo.jp/a020/sangyou/nipporicollection/2026koukai.html",
@@ -118,12 +114,14 @@ window.PROFILE = {
       title: { en: "YKK FASTENING CREATION for 2027", ja: "YKK FASTENING CREATION for 2027" },
       detail: {
         en: [
-          "The 26th YKK FASTENING AWARDS — Selected Works Fashion Show",
+          "26th YKK FASTENING AWARDS — Selected Works Fashion Show",
+          "Related work: CURVE CELL BAG",
           "Tokyo: YKK60 Building, 1F AZ1 (October 29–30, 2026)",
           "Osaka: MyDome Osaka, 3F, Halls E & F (October 7–8, 2026)",
         ],
         ja: [
           "第26回YKKファスニングアワード 入選作品ファッションショー",
+          "関連作品：CURVE CELL BAG",
           "東京：YKK60ビル 1階 AZ1（2026年10月29日〜30日）",
           "大阪：マイドームおおさか 3階 E・Fホール（2026年10月7日〜8日）",
         ],

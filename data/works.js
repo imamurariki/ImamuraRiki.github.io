@@ -80,6 +80,10 @@ window.WORKS = [
         {
           title: { en: "3D Model & Printing Guide (ZIP)", ja: "3Dモデル・プリントガイド(ZIP)" },
           url: "https://github.com/imamurariki/leather-cell-vest/releases/download/v1.0.0/leather-cell-vest.zip",
+          description: {
+            en: "Includes 3D-printable LEATHER CELL components and a printing guide. This is not a complete 3D model of the assembled vest.",
+            ja: "LEATHER CELL VESTに使用した3Dプリント用セルパーツとプリントガイドを収録しています。完成したベスト全体の3Dモデルではありません。",
+          },
           license: {
             en: "3D model (STL): CC BY-NC 4.0. Non-commercial use, modification and redistribution are permitted with attribution, a license link and an indication of changes.",
             ja: "3Dモデル（STL）：CC BY-NC 4.0。作者表記・ライセンスへのリンク・改変の明示を条件に、非営利での利用・改変・再配布が可能です。",
@@ -147,8 +151,8 @@ window.WORKS = [
           title: { en: "3D Model & Printing Guide (ZIP)", ja: "3Dモデル・プリントガイド(ZIP)" },
           url: "https://github.com/imamurariki/curve-cell-bag/releases/download/v1.0.0/curve-cell-bag.zip",
           description: {
-            en: "3D-printable cell components and a printing guide; not a complete, assembled bag model.",
-            ja: "3Dプリント用のセル部品とプリントガイドを収録しています。完成したバッグ全体の3Dモデルではありません。",
+            en: "Includes 3D-printable CURVE CELL components and a printing guide. This is not a complete 3D model of the assembled bag.",
+            ja: "CURVE CELL BAGに使用した3Dプリント用セルパーツとプリントガイドを収録しています。完成したバッグ全体の3Dモデルではありません。",
           },
           license: {
             en: "3D model (STL): CC BY-NC 4.0. Non-commercial use, modification and redistribution are permitted with attribution, a license link and an indication of changes.",
