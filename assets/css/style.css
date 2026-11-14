@@ -789,6 +789,17 @@ figcaption {
   margin-top: clamp(32px, 4vw, 48px);
 }
 
+@media (max-width: 599px) {
+  [data-page="about"] .profile > div:not(.profile__name) dd,
+  [data-page="about"] .about-bio {
+    font-size: 14px;
+  }
+
+  [data-page="about"] .profile > div:not(.profile__name) dt {
+    font-size: var(--fs-s);
+  }
+}
+
 /* ---------- CONTACT ---------- */
 
 /* 見出しのすぐ下は罫線なしで続ける */
